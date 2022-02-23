@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Web;
 
-namespace NTierProject3152.COMMON.Tools
+namespace Project.COMMON.Tools
 {
     public static class MailService
     {

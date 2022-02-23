@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 
-namespace NTierProject3152.Common.Tools
+namespace Project.Common.Tools
 {
     public static class ImageUploader
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace NTierProject3152.COMMON.Tools
+namespace Project.COMMON.Tools
 {
     public static class DantexCrypt
     {
