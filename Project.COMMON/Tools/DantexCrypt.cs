@@ -28,15 +28,15 @@ namespace Project.COMMON.Tools
                 {
                     case 1:
                         tempInteger = (Convert.ToInt32(item) + 1) * 2;
-                        hashedCode += $"{tempInteger.ToString()}{charArray[0]}";
+                        hashedCode += $"{tempInteger}{charArray[0]}";
                         break;
                     case 2:
                         tempInteger = (Convert.ToInt32(item) + 2) * 3;
-                        hashedCode += $"{tempInteger.ToString()}{charArray[1]}";
+                        hashedCode += $"{tempInteger}{charArray[1]}";
                         break;
                     case 3:
                         tempInteger = (Convert.ToInt32(item) + 3) * 4;
-                        hashedCode += $"{tempInteger.ToString()}{charArray[2]}";
+                        hashedCode += $"{tempInteger}{charArray[2]}";
                         break;
                 }
 
