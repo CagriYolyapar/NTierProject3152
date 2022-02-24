@@ -10,5 +10,12 @@ namespace Project.MVCUI.ConsumeDTO
         //Sanal Pos Entegrasyonu
 
         //Normalde bu tarz sınıflar calıstıgınız ilgili yerden aldıgınız dökümantasyonların kılavuzlugu sayesinde olusturulur...
+        public int ID { get; set; }
+        public string CardUserName { get; set; }
+        public string SecurityNumber { get; set; }
+        public string CardNumber { get; set; }
+        public int CardExpiryMonth { get; set; }
+        public int CardExpiryYear { get; set; }
+        public int ShoppingPrice { get; set; }
     }
 }
