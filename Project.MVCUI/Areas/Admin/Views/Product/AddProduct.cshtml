@@ -1,0 +1,88 @@
+﻿@model ProductVM
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+<style>
+    .genislik {
+        width: 300px;
+    }
+</style>
+
+@using (Html.BeginForm("AddProduct","Product",FormMethod.Post,new { enctype="multipart/form-data"}))
+{
+    <div class="row">
+        <div class="col-sm-12">
+
+            <section class="panel">
+                <header class="panel-heading">
+                    Ürün Ekleme Sayfası
+                </header>
+
+
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="col-sm-2"> Ürün İsim</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Product.ProductName, new { @class = "form-control genislik" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+                    <div class="form-group">
+                        <label class="col-sm-2"> Ürün Fiyatı</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Product.UnitPrice, new { @class = "form-control genislik" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2"> Ürün Stok</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Product.UnitsInStock, new { @class = "form-control genislik" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+                    <div class="form-group">
+                        <label class="col-sm-2"> Kategori</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(x => x.Product.CategoryID, new SelectList(Model.Categories, "ID", "CategoryName"), "Lutfen seciniz")
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2"> Resim seciniz</label>
+                        <div class="col-sm-10">
+                           <input type="file" name="resim" class="form-control genislik" />
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2"> </label>
+                        <div class="col-sm-10">
+                            <button class="btn btn-primary" style="width:100px;"> Ekle</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+}
+

@@ -1,13 +1,13 @@
 ﻿@model CategoryVM
-@{
-    ViewBag.Title = "CategoryList";
-}
 
+@{
+    ViewBag.Title = "GetAllCategories";
+}
 
 
 <section class="panel">
     <header class="panel-heading">
-        @Html.ActionLink("Tum Kategoriler","GetAllCategories")
+       @Html.ActionLink("Aktif Kategoriler","CategoryList")
     </header>
     <div class="panel-body">
         <div class="adv-table">
@@ -20,7 +20,7 @@
                         <th>Durum</th>
                         <th class="hidden-phone">Güncelle</th>
                         <th class="hidden-phone">Sil</th>
-                       
+
                     </tr>
                 </thead>
                 <tbody>
@@ -35,7 +35,7 @@
                             </td>
                             <td class="hidden-phone">@item.Description</td>
                             <td>@item.Status</td>
-                            <td class="center hidden-phone">@Html.ActionLink("Güncelle","UpdateCategory",new { id = item.ID},new { @class="btn btn-warning"})</td>
+                            <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateCategory", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
                             <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteCategory", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
                         </tr>
                     }
