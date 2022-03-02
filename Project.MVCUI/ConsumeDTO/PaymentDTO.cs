@@ -16,6 +16,6 @@ namespace Project.MVCUI.ConsumeDTO
         public string CardNumber { get; set; }
         public int CardExpiryMonth { get; set; }
         public int CardExpiryYear { get; set; }
-        public int ShoppingPrice { get; set; }
+        public decimal ShoppingPrice { get; set; }
     }
 }

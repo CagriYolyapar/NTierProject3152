@@ -3,6 +3,13 @@
     ViewBag.Title = "ShoppingList";
 }
 
+
+@TempData["bos"]
+@TempData["sepetBos"]
+@TempData["baglantiRed"]
+@TempData["odeme"]
+@TempData["sorun"]
+
 <!-- page start-->
 <div class="row">
     <div class="col-md-3">
@@ -17,19 +24,19 @@
             </header>
             <div class="panel-body">
                 <ul class="nav prod-cat">
-                  @foreach (Category item in Model.Categories)
-                  {
-                      <li style="padding-top:30px"> @Html.ActionLink(item.CategoryName,"ShoppingList",new { categoryID = item.ID},new { @class="btn btn-primary"})   </li>
-                  }
+                    @foreach (Category item in Model.Categories)
+                    {
+                        <li style="padding-top:30px"> @Html.ActionLink(item.CategoryName, "ShoppingList", new { categoryID = item.ID }, new { @class = "btn btn-primary" })   </li>
+                    }
                 </ul>
             </div>
         </section>
-        
+
     </div>
     <div class="col-md-9">
         <section class="panel">
             <div class="panel-body">
-               
+
 
                 <div class="pull-right">
                     <ul class="pagination pagination-sm pro-page-list">
@@ -39,7 +46,7 @@
                         }
                         else
                         {
-                            <li>@Html.PagedListPager(Model.PagedProducts, page => Url.Action("ShoppingList", new { page}))</li>
+                            <li>@Html.PagedListPager(Model.PagedProducts, page => Url.Action("ShoppingList", new { page }))</li>
                         }
                     </ul>
                 </div>
@@ -54,16 +61,20 @@
                     <section class="panel">
                         <div class="pro-img-box">
 
-                            @if (item.ImagePath == null || item.ImagePath == "3")
+                            @if (item.ImagePath == null || item.ImagePath == "3" || item.ImagePath.Contains("night"))
                             {
-                                <img src="http://lorempixed.com/640/480/nightlife/" alt="Resim yok" width="100" height="300" title="@item.ProductName" />
+                                <img src="~/Pictures/69c2e9ece9eb149d2def96a5aa199e17.jpg" alt="Resim yok" width="100" height="300" title="@item.ProductName" />
+
                             }
                             else
                             {
                                 <img src="@item.ImagePath" alt="Resim yok" width="100" height="300" title="@item.ProductName" />
                             }
 
-                            <a href="#" class="adtocart">
+
+
+
+                            <a href="@Url.Action("AddToCart",new { id=item.ID})" class="adtocart">
                                 <i class="icon-shopping-cart"></i>
                             </a>
                         </div>
@@ -71,11 +82,12 @@
 
                         <div class="panel-body text-center">
                             <h4>
-                                <a href="#" class="pro-title">
-                                   @item.ProductName
+                                <a href="#" class="pro-title" title="@item.ProductName">
+                                    @item.ProductName | @if (item.Category != null)
+                                    {<span>@item.Category.CategoryName</span>}
                                 </a>
                             </h4>
-                            <p class="price">$300.00</p>
+                            <p class="price">$@item.UnitPrice</p>
                         </div>
                     </section>
                 </div>
@@ -88,3 +100,32 @@
     </div>
 </div>
 <!-- page end-->
+
+
+
+@section Sepet{
+    <li>
+        <a href="@Url.Action("CartPage","Shopping")">
+            <i class="icon-shopping-cart"></i>
+
+            @if (Session["scart"] != null)
+            {
+                <span> @((Session["scart"] as Cart).TotalPrice)$  </span>
+            }
+
+
+        </a>
+    </li>
+
+
+}
+
+@section Member
+{
+    
+    @if (Session["member"] != null)
+    {
+        <span class="from">@((Session["member"] as AppUser).UserName)</span>
+    }
+}
+

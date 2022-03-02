@@ -1,3 +1,14 @@
 ﻿1=> Mevcut durumda Category crud işlemlerinde bir Category güncellenmek istendiginde durumu Inserted'e cekilip güncellense bile onun durumu Updated oluyor lütfen bu durumu secilen secenek neyse ona göre güncelleyin...
 
 2=> Product crud işlemlerinde güncelleme sayfasına da dosya sectirme imkanı koyun eger secilen dosya varsa urunun resmi o dosya olarak güncellensin...Eger hicbir dosya secilmeden post ediliyorsa ürünün resmi null'a cekilsin... Eger bir dosya secilerek post ediliyorsa product'ın resmi yeni gönderilen dosya olacak...
+
+3=> Crud işlemlerinde ve Register işlemlerinde zorunlu alanların Validation yapısını olusturun...
+
+4=> Urun kısmında Search(arama motoru) eklentisi yapılsın
+
+5=> Filterlar loglama yapılsın
+
+6=> Bir Kargo sirketi icin API sitesi yazın...Kargo sirketiyle projenizi haberleştirerek sipariş edilen ürünleriniz o an nerede bu projeden Kargo şirketine ulasarak bu bilgiler gösterilsin...
+
+7=> Kişi verdigi siparişleri gözlemleyebilsin (6. maddedeki API'dan ilgili sipariş nerede o bilgiye ulasabilirsiniz )
+
